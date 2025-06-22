@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing System</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js.js"></script>
+</head>
+<body>
+    <div id="cc1"></div>
+    <div id="cc" class="container">
+        <div class="left-panel">
+            <div class="total-amount-section" id="h11">Total Price: $<span id="total-price">0.00</span></div>
+            
+            <div class="order-list">
+                <div  id="orderr">
+                <div class="order-header">
+                    <div class="item-col">Item</div>
+                    <div class="qty-col">Quantity</div>
+                    <div class="price-col">Unit Price</div>
+                    <div class="total-col">Total Price</div>
+                </div>
+                <div id="order-items" class="order-item"></div></div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label>Item Number</label>
+                    <input type="text" id="item-number" style="width:200px;">
+                </div>
+                <div class="input-group">
+                    <label>Quantity</label>
+                    <input type="text" id="quantity" style="width:200px;">
+                </div>
+                <div class="input-group">
+                    <label>Price</label>
+                    <input type="text" id="itemss" style="width:140px;">
+                </div>
+                <button class="add-btn" style="border-radius:5px;border:1px solid black;">Add</button>
+            </div>
+
+            <div class="keypad-section">
+                <div class="left-keypad">
+                    <button class="lang-btn">Language</button>
+                    <div class="table-input">
+                        <label>Table No</label>
+                        <input type="text">
+                    </div>
+                    <div class="cover-input">
+                        <label>No of Cover</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="number-keypad">
+                    <button class="number-btn">7</button>
+                    <button class="number-btn">8</button>
+                    <button class="number-btn">9</button>
+                    <button class="number-btn">4</button>
+                    <button class="number-btn">5</button>
+                    <button class="number-btn">6</button>
+                    <button class="number-btn">1</button>
+                    <button class="number-btn">2</button>
+                    <button class="number-btn">3</button>
+                    <button class="number-btn">0</button>
+                    <button class="number-btn">.</button>
+                    <button class="number-btn">-</button>
+                </div>
+
+                <div class="action-keypad" style="padding-left:100px;">
+                    <button class="action-btn" style="height:80px;">AC</button>
+                    <button class="action-btn" style="height:80px;">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="menu-section">
+                <div class="menu-grid" style="padding: 8px;"></div>
+            </div>
+
+            <div class="control-section">
+                <div class="control-buttons" style="display: grid; grid-template-columns: repeat(7, 100px); grid-template-rows: repeat(2, 100px); gap: 5px;">
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <button class="control-btn orange-btn" style="width: 100px; height: 50px;">New Bill</button>
+                        <button class="control-btn orange-btn" style="width: 100px; height: 50px;">Inventory</button>
+                    </div>
+                    <button id="b2" class="control-btn orange-btn" style="width: 100px; height: 100px;">$2</button>
+                    <button id="b10" class="control-btn orange-btn" style="width: 100px; height: 100px;">$10</button>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Open Cash Box</button>
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Terminate<br>Transaction</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Goods Return</button>
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Print</button>
+                    </div>
+                    <button id="c1" class="control-btn green-btn" style="width: 100px; height: 100px;">Cancel Item</button>
+                    <button class="control-btn green-btn" style="width: 100px; height: 100px;">Add Item</button>
+                    <button class="control-btn orange-btn" style="width: 100px; height: 100px;">▶ Bill</button>
+                    <button id="b5" class="control-btn orange-btn" style="width: 100px; height: 100px;">$5</button>
+                    <button id="b50" class="control-btn orange-btn" style="width: 100px; height: 100px;">$50</button>
+                    <button class="control-btn orange-btn" style="width: 100px; height: 100px;">Sales Report</button>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Reserved<br>Transaction</button>
+                        <button class="control-btn green-btn" style="width: 100px; height: 50px;">Restore</button>
+                    </div>
+                    <button id="d1" class="control-btn green-btn" style="width: 100px; height: 100px;">Delete All<br>Transaction</button>
+                    <button class="control-btn green-btn" style="width: 100px; height: 100px;">Main Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
