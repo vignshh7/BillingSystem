@@ -1,47 +1,7 @@
 let menuItemsData = [];
 let isMenuLoaded = false;
-let isBilled = false; 
+let isBilled = false;
 let x = 1;
-const menuItemsWithDates = [
-    {"name": "Coffee Black", "img": "images/coffee_black.png", "unitPrice": 16.50, "quantityPurchased": 45},
-    {"name": "Tea Black", "img": "images/tea_black.png", "unitPrice": 4.70, "quantityPurchased": 32},
-    {"name": "Chrysanthemum Tea", "img": "images/chrysanthemum_tea.png", "unitPrice": 5.00, "quantityPurchased": 28},
-    {"name": "Coffee", "img": "images/coffee.png", "unitPrice": 16.50, "quantityPurchased": 67},
-    {"name": "Steamed Bun", "img": "images/steamed_bun.png", "unitPrice": 7.30, "quantityPurchased": 53},
-    {"name": "Chinese Tea", "img": "images/chinese_tea.png", "unitPrice": 4.70, "quantityPurchased": 39},
-    {"name": "Iced Coffee Black", "img": "images/iced_coffee_black.png", "unitPrice": 13.50, "quantityPurchased": 71},
-    {"name": "Iced Tea Black", "img": "images/iced_tea_black.png", "unitPrice": 11.70, "quantityPurchased": 25},
-    {"name": "Deep Fry Timsum", "img": "images/deep_fry_timsum.png", "unitPrice": 7.30, "quantityPurchased": 48},
-    {"name": "Soya Milk", "img": "images/soya_milk.png", "unitPrice": 16.50, "quantityPurchased": 62},
-    {"name": "Iced Coffee", "img": "images/iced_coffee.png", "unitPrice": 13.50, "quantityPurchased": 36},
-    {"name": "Iced Tea", "img": "images/iced_tea.png", "unitPrice": 11.70, "quantityPurchased": 29},
-    {"name": "Grass Jelly", "img": "images/grass_jelly.png", "unitPrice": 8.00, "quantityPurchased": 55},
-    {"name": "Bake", "img": "images/bake.png", "unitPrice": 7.30, "quantityPurchased": 42},
-    {"name": "Coffee C", "img": "images/coffee_c.png", "unitPrice": 16.50, "quantityPurchased": 78},
-    {"name": "Tea C", "img": "images/tea_c.png", "unitPrice": 4.70, "quantityPurchased": 33},
-    {"name": "MILO", "img": "images/milo.png", "unitPrice": 6.50, "quantityPurchased": 51},
-    {"name": "Porridge", "img": "images/porridge.png", "unitPrice": 11.20, "quantityPurchased": 64},
-    {"name": "Iced MILO", "img": "images/iced_milo.png", "unitPrice": 6.50, "quantityPurchased": 27},
-    {"name": "Tea", "img": "images/tea.png", "unitPrice": 4.70, "quantityPurchased": 46},
-    {"name": "Chinese Tea_2", "img": "images/chinese_tea_2.png", "unitPrice": 4.70, "quantityPurchased": 38},
-    {"name": "Beverage", "img": "images/beverage.png", "unitPrice": 8.00, "quantityPurchased": 59},
-    {"name": "Iced Coffee Black_2", "img": "images/iced_coffee_black_2.png", "unitPrice": 13.50, "quantityPurchased": 31},
-    {"name": "Iced Tea Black_2", "img": "images/iced_tea_black_2.png", "unitPrice": 11.70, "quantityPurchased": 44},
-    {"name": "Soya Milk_2", "img": "images/soya_milk_2.png", "unitPrice": 16.50, "quantityPurchased": 69},
-    {"name": "Coffee_2", "img": "images/coffee_2.png", "unitPrice": 16.50, "quantityPurchased": 52},
-    {"name": "Fry Timsum", "img": "images/fry_timsum.png", "unitPrice": 7.30, "quantityPurchased": 47},
-    {"name": "Dumplings", "img": "images/dumplings.png", "unitPrice": 16.10, "quantityPurchased": 35}
-];
-
-
-const startDateRange = new Date('2016-01-01T00:00:00');
-const endDateRange = new Date('2025-06-10T11:52:00');
-menuItemsWithDates.forEach(item => {
-    const randomDate = new Date(
-        startDateRange.getTime() + Math.random() * (endDateRange.getTime() - startDateRange.getTime())
-    );
-    item.purchaseDate = randomDate.toISOString();
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchMenuItems().then(() => {
@@ -85,9 +45,9 @@ function bindButtonEvents() {
                 } else {
                     console.error(`Item not found in order: ${lastAddedItemName}`);
                 }
-            } 
+            }
         });
-    } 
+    }
 
     const deleteAllBtn = $('#d1');
     if (deleteAllBtn.length) {
@@ -127,7 +87,6 @@ function bindButtonEvents() {
             const unitPrice = parseFloat(unitPriceInput.value);
 
             if (itemNumber && quantity > 0 && !isNaN(unitPrice) && unitPrice > 0) {
-                
                 addItem(`Item ${itemNumber}`, quantity, unitPrice);
                 itemNumberInput.value = '';
                 quantityInput.value = '';
@@ -189,7 +148,7 @@ function bindButtonEvents() {
             isBilled = true;
             displayBill(bill, payable);
         });
-    } 
+    }
 
     const newBillBtn = $('.control-btn:contains("New Bill")');
     if (newBillBtn.length) {
@@ -308,8 +267,8 @@ function displayAllBills() {
         return;
     }
 
-    cc.html(''); 
-    cc.show(); 
+    cc.html('');
+    cc.show();
 
     const salesContainer = $('<div>').css({ padding: '20px', backgroundColor: '#fff', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' });
 
@@ -348,7 +307,8 @@ function displayAllBills() {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '10px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        flexWrap: 'wrap'
     });
 
     const filterLabel = $('<label>').attr('for', 'filter').text('Filter By:');
@@ -368,7 +328,8 @@ function displayAllBills() {
 
     const customDateRange = $('<div>').attr('id', 'customDateRange').css({
         display: 'none',
-        gap: '10px'
+        gap: '10px',
+        flexWrap: 'wrap'
     }).append(
         $('<input>').attr({
             type: 'datetime-local',
@@ -482,7 +443,6 @@ function displayAllBills() {
     function renderSalesReport(data) {
         const tbody = $('#salesTableBody');
         tbody.html('');
-        // Sort by item name alphabetically (A to Z)
         data.sort((a, b) => a.name.localeCompare(b.name));
         data.forEach((item, index) => {
             const row = $('<tr>').css({
@@ -612,8 +572,8 @@ function displayInventory() {
         return;
     }
 
-    cc.html(''); 
-    cc.show(); 
+    cc.html('');
+    cc.show();
 
     const inventoryContainer = $('<div>').css({ padding: '20px', backgroundColor: '#fff', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' });
 
@@ -652,7 +612,8 @@ function displayInventory() {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '10px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        flexWrap: 'wrap'
     });
 
     const filterLabel = $('<label>').attr('for', 'filter').text('Filter By:');
@@ -671,7 +632,8 @@ function displayInventory() {
     );
     const customDateRange = $('<div>').attr('id', 'customDateRange').css({
         display: 'none',
-        gap: '10px'
+        gap: '10px',
+        flexWrap: 'wrap'
     }).append(
         $('<input>').attr({
             type: 'datetime-local',
@@ -756,7 +718,7 @@ function displayInventory() {
     function getInventoryData() {
         const bills = JSON.parse(localStorage.getItem('bills')) || {};
         const inventoryItems = [];
-        menuItemsWithDates.forEach(menuItem => {
+        menuItemsData.forEach(menuItem => {
             inventoryItems.push({
                 name: menuItem.name,
                 purchased: menuItem.quantityPurchased,
@@ -963,8 +925,8 @@ function fetchMenuItems() {
                         const imagePath = `images/${imageName}.png`;
                         const html = `
                             <div class="menu-item" data-name="${item.name}">
-                                <img src="${imagePath}" alt="${item.name}" class="menu-item-img" style="height:100px;width:100px;">
-                                <div class="menu-item-name" style="font-size:14px">${item.name}</div>
+                                <img src="${imagePath}" alt="${item.name}" class="menu-item-img">
+                                <div class="menu-item-name">${item.name}</div>
                             </div>
                         `;
                         menuGrid.append(html);
@@ -1027,7 +989,7 @@ function loadOrder() {
 
 function displayBill(bill, payable) {
     const orderItems = document.getElementById('order-items');
-    orderItems.innerHTML = ''; 
+    orderItems.innerHTML = '';
 
     const billDiv = document.createElement('div');
     billDiv.className = 'bill-summary';
