@@ -15,30 +15,31 @@
             <div class="total-amount-section" id="h11">Total Price: $<span id="total-price">0.00</span></div>
             
             <div class="order-list">
-                <div  id="orderr">
-                <div class="order-header">
-                    <div class="item-col">Item</div>
-                    <div class="qty-col">Quantity</div>
-                    <div class="price-col">Unit Price</div>
-                    <div class="total-col">Total Price</div>
+                <div id="orderr">
+                    <div class="order-header">
+                        <div class="item-col">Item</div>
+                        <div class="qty-col">Quantity</div>
+                        <div class="price-col">Unit Price</div>
+                        <div class="total-col">Total Price</div>
+                    </div>
+                    <div id="order-items" class="order-item"></div>
                 </div>
-                <div id="order-items" class="order-item"></div></div>
             </div>
 
             <div class="input-section">
                 <div class="input-group">
                     <label>Item Number</label>
-                    <input type="text" id="item-number" style="width:200px;">
+                    <input type="text" id="item-number">
                 </div>
                 <div class="input-group">
                     <label>Quantity</label>
-                    <input type="text" id="quantity" style="width:200px;">
+                    <input type="text" id="quantity">
                 </div>
                 <div class="input-group">
                     <label>Price</label>
-                    <input type="text" id="itemss" style="width:140px;">
+                    <input type="text" id="itemss">
                 </div>
-                <button class="add-btn" style="border-radius:5px;border:1px solid black;">Add</button>
+                <button class="add-btn">Add</button>
             </div>
 
             <div class="keypad-section">
@@ -69,19 +70,19 @@
                     <button class="number-btn">-</button>
                 </div>
 
-                <div class="action-keypad" style="padding-left:100px;">
-                    <button class="action-btn" style="height:80px;">AC</button>
-                    <button class="action-btn" style="height:80px;">Clear</button>
+                <div class="action-keypad">
+                    <button class="action-btn">AC</button>
+                    <button class="action-btn">Clear</button>
                 </div>
             </div>
         </div>
 
         <div class="right-panel">
             <div class="menu-section">
-                <div class="menu-grid" style="padding: 8px;"></div>
+                <div class="menu-grid"></div>
             </div>
 
-            <div class="control-section">
+              <div class="control-section">
                 <div class="control-buttons" style="display: grid; grid-template-columns: repeat(7, 100px); grid-template-rows: repeat(2, 100px); gap: 5px;">
                     <div style="display: flex; flex-direction: column; gap: 2px;">
                         <button class="control-btn orange-btn" style="width: 100px; height: 50px;">New Bill</button>
