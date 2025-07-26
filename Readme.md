@@ -33,8 +33,8 @@ http://localhost:8000
 BillingSystem/
 ├── index.html          # Main application
 ├── data.json          # Menu items data
-├── styles.css         # Application styling
-├── script.js          # Core functionality
+├── css.css         # Application styling
+├── js.js          # Core functionality
 └── images/            # Menu item images
 ```
 
