@@ -1,0 +1,45 @@
+# ─── Dependencies ───────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ─── Images (large binary assets, stored in backend/data/images) ────
+backend/data/images/
+
+# ─── Runtime data (generated at runtime, not source) ────
+backend/data/bills.json
+backend/data/reservations.json
+
+# ─── Frontend build output ───────────────────────────────
+frontend/dist/
+frontend/.vite/
+
+# ─── Environment / secrets ───────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ─── Logs ───────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─── OS generated files ──────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editor / IDE ────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Misc ────────────────────────────────────────────────
+.dist/
+*.tgz
+*.zip

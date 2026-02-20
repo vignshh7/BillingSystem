@@ -1,0 +1,413 @@
+/* ─── exact replica of original css.css ─── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+}
+
+#order-items {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.left-panel {
+    width: 45%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right-panel {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.total-amount-section {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.order-list {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.order-header {
+    display: flex;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.order-header div {
+    padding: 5px;
+}
+
+.order-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}
+
+.order-row div {
+    padding: 5px;
+}
+
+.item-col  { flex: 2; }
+.qty-col   { flex: 1; text-align: center; }
+.price-col { flex: 1; text-align: right; }
+.total-col { flex: 1; text-align: right; }
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 120px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: blue;
+    margin-bottom: 3px;
+}
+
+.input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.keypad-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.left-keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.lang-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.table-input,
+.cover-input {
+    margin-bottom: 10px;
+}
+
+.table-input label,
+.cover-input label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.table-input input,
+.cover-input input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.number-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.number-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.action-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+    min-height: 50px;
+}
+
+.menu-section {
+    flex: 1;
+    background-color: white;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 5px;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-item img:hover {
+    transform: scale(1.1);
+}
+
+.menu-item-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.control-section {
+    background-color: #adf09c;
+    padding: 10px;
+}
+
+.control-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    min-width: 80px;
+    min-height: 50px;
+    white-space: normal;
+}
+
+.orange-btn {
+    background-color: #ff8c00;
+    color: white;
+}
+
+.green-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+/* bill summary inside order panel */
+.bill-summary-wrap {
+    padding: 10px;
+}
+
+/* ─── Sales / Inventory overlay page ─── */
+#cc1 {
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* ─── responsive ─── */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+
+    .total-amount-section {
+        font-size: 1.2rem;
+    }
+
+    .input-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .keypad-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .number-keypad {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .number-btn,
+    .action-btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .menu-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-item-name {
+        font-size: 0.8rem;
+    }
+
+    .control-section {
+        padding: 5px;
+    }
+
+    .control-btn {
+        font-size: 0.8rem;
+        padding: 8px;
+        min-height: 40px;
+    }
+
+    /* scroll control grid on small screens */
+    .control-buttons {
+        overflow-x: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .total-amount-section {
+        font-size: 1rem;
+    }
+
+    .input-group label {
+        font-size: 0.8rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .add-btn,
+    .lang-btn,
+    .action-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .number-btn {
+        font-size: 1rem;
+        padding: 6px;
+        min-height: 40px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+
+    .menu-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .menu-item-name {
+        font-size: 0.7rem;
+    }
+
+    .control-btn {
+        font-size: 0.7rem;
+        padding: 6px;
+        min-height: 35px;
+    }
+}
